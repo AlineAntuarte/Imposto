@@ -1,0 +1,26 @@
+# 🏛️ Calculadora de Imposto de Renda (Simulador IRRF)
+
+Este projeto é uma ferramenta web desenvolvida para calcular o salário líquido, descontando o INSS e o Imposto de Renda Retido na Fonte (IRRF) com base nas tabelas vigentes da Receita Federal.
+
+## 🚀 Objetivo
+
+O objetivo principal é aplicar conhecimentos de **Front-end** (HTML5, CSS3 e JavaScript) e praticar a lógica de programação, fazendo a transição dos conceitos aprendidos em Java para o ambiente web.
+
+## 🛠️ Tecnologias
+
+- **HTML5**: Estruturação da interface.
+- **CSS3**: Estilização moderna e responsividade.
+- **JavaScript**: Lógica de cálculo e manipulação do DOM (em aprendizado).
+
+## 📋 Funcionalidades (Roadmap)
+
+- [ ] Interface para entrada de salário bruto e número de dependentes.
+- [ ] Cálculo automático de desconto do INSS (tabela progressiva).
+- [ ] Cálculo de IRRF considerando a base de cálculo e deduções.
+- [ ] Exibição detalhada do salário líquido e total de descontos.
+- [ ] Gráfico visual de distribuição do salário (Funcionalidade futura).
+
+## 🖋️ Autora
+
+Desenvolvido por **Aline Barbosa Antuarte**.  
+Estudante de Análise e Desenvolvimento de Sistemas - IFSC.
