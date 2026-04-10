@@ -247,3 +247,37 @@ Você só precisa adicionar uma linha em cada regra de alinhamento que você já
     transform: scale(1.05);
     color: #cacaca;
 }
+```
+
+## 9. Dissecando a Magia: `text-align` e `transform-origin`
+
+### A Analogia do "Elástico e o Prego"
+
+Imagine que o seu link de email é uma **tira de elástico**. O comando `transform: scale()` é você puxando esse elástico para ele ficar maior.
+
+* Se você esticar um elástico solto, ele cresce para **todos os lados** a partir do meio (esse é o comportamento padrão que estava fazendo o email invadir a barra).
+* A propriedade `transform-origin` é o **prego**. Ela diz exatamente em qual ponto do elástico você vai bater o prego na parede antes de começar a puxar. Onde tem prego, não se move!
+
+Quando usamos `transform: scale()`, o elemento cresce a partir do seu centro (50% 50%) por padrão. Para evitar que links cresçam para a direção errada (ex: invadindo um elemento vizinho), usamos o `transform-origin` para agir como um "prego" que trava um dos lados.
+
+### 📌 O Lado Direito `alinebarbosaantuarte@gmail.com`
+
+```css
+text-align: right;
+transform-origin: right center;
+```
+
+* **`text-align: right;`**: Empurra o texto do email para encostar na "parede direita" do container dele.
+* **`transform-origin: right center;`**: É o nosso "prego"! Dizemos ao CSS: "Pregue a lateral direita do link. Quando ele esticar no *hover*, a direita não pode sair do lugar (fugindo do eixo Y), ele só pode crescer expandindo para a esquerda". O `center` significa que no eixo vertical (cima/baixo) ele continua crescendo a partir do meio.
+
+### 📌 O Lado Esquerdo `aline.ba@aluno.ifsc.edu.br`
+
+```css
+text-align: left;
+transform-origin: left center;
+```
+
+* **`text-align: left;`**: Empurra o texto para a parede esquerda.
+* **`transform-origin: left center;`**: Colocamos o prego na borda esquerda! Ao esticar, a esquerda fica cravada no lugar e o texto transborda apenas para a direita.
+
+> **💡 Resumo Mental:** O `transform-origin` altera o ponto âncora de qualquer animação de rotação (`rotate`) ou escala (`scale`). Se você não quer que um elemento cresça para a direita, crave o prego na direita (`transform-origin: right;`)!
