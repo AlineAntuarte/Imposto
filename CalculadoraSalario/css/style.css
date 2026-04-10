@@ -12,6 +12,7 @@
     --textoEspecial: rgb(28, 50, 80);
     --textoGeral: #4F4F4F;
     --textoContraste: rgb(248, 248, 248);
+    --Ouro: #f7bb17;
 
 }
 
@@ -89,10 +90,24 @@ footer {
     gap: 0 5px;
 }
 
-.emailFooterContainer a:first-of-type{
+.emailFooterContainer a:first-of-type {
     text-align: right;
+    transform-origin: right center;
 }
 
-.emailFooterContainer a:last-of-type{
+.emailFooterContainer a:last-of-type {
     text-align: left;
+    transform-origin: left center;
+}
+
+.emailFooterItem>a {
+    color: var(--textoContraste);
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+.emailFooterItem>a:hover {
+    transform: scale(1.05);
+    color: var(--Ouro)
 }
