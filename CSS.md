@@ -124,3 +124,126 @@ a:hover {
 Para tirar o azul, o sublinhado e fazer o link crescer, nós usamos `text-decoration`, `color` e `transform`.
 
 > **💡 O Segredo do `display: inline-block`:** > Se você tentar usar `transform: scale()` em uma tag `<a>` sem mudar o `display` dela, **nada vai acontecer**. Elementos `inline` não têm dimensões fixas manipuláveis dessa forma. Transformando em `inline-block`, o link continua se comportando como texto na linha, mas ganha as propriedades físicas de uma caixa, permitindo que ele cresça e diminua perfeitamente.
+
+## 6. Estudo de Caso: Por que meu `:hover` e `transform` não funcionam?
+
+**O Problema:** O link (`<a>`) estava recebendo a cor e perdendo o sublinhado, mas ao passar o mouse, a animação de crescer (`scale`) e a mudança de cor não aconteciam.
+
+**O Código Original com Bug:**
+
+```css
+.emailFooterItem>a {
+    color: var(--textoContraste);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.emailFooterItem>a :hover { /* Erro 1 */
+    transform: scale(1.5);  /* Erro 2 */
+    color: #cacaca;
+}
+```
+
+### 🔍 Os 2 Erros Ocultos
+
+1. **O Espaço Traidor (`a :hover` vs `a:hover`):**
+   No CSS, um espaço significa "um elemento dentro do outro" (descendente). Quando você escreve `a :hover` (com espaço), o navegador entende: *"Quando o mouse passar por cima, aplique o efeito em qualquer elemento que estiver **dentro** do link"*.
+   Para aplicar o efeito ao **próprio link**, a pseudo-classe precisa ficar grudada na tag: **`a:hover`**.
+
+2. **A Maldição do Elemento Inline (`transform` ignorado):**
+   Como vimos no tópico anterior, a tag `<a>` nasce como um elemento `inline`. Propriedades de transformação física, como o `transform: scale()`, **não funcionam** em elementos puramente `inline`. O navegador simplesmente ignora o comando.
+
+### ✅ A Solução Definitiva
+
+Para consertar, precisamos grudar o `:hover` e adicionar a propriedade `display: inline-block;` na regra principal do link.
+
+**O Código Corrigido:**
+
+```css
+.emailFooterItem>a {
+    color: var(--textoContraste);
+    text-decoration: none;
+    
+    display: inline-block; /* 🎯 A mágica que permite o scale() funcionar */
+    transition: all 0.3s ease; /* Usar 'all' garante que tanto a cor quanto o tamanho animem suavemente */
+}
+
+.emailFooterItem>a:hover { /* 🎯 Grudado! Sem espaço antes dos dois pontos */
+    transform: scale(1.5);
+    color: #cacaca;
+}
+```
+
+## 7. O que é um Elemento Inline? (Inline vs. Block)
+
+No HTML, toda tag nasce com um comportamento de exibição padrão (a propriedade `display`). Os dois comportamentos mais fundamentais da web são o **Inline** (em linha) e o **Block** (em bloco).
+
+### 🧵 O Elemento Inline (Em Linha)
+
+Imagine o elemento *inline* como uma palavra no meio de uma frase. Ele foi feito para fluir junto com o texto, sem quebrar o layout.
+
+* **Comportamento:** Ele não cria uma nova linha. Ele se acomoda ao lado do elemento vizinho.
+* **Largura e Altura:** Ele ocupa **exatamente** o espaço do seu conteúdo (o texto ou imagem dentro dele).
+* **A Grande Pegadinha:** O CSS **ignora** as propriedades `width` (largura) e `height` (altura) em elementos puramente *inline*. Margens e preenchimentos verticais (`margin-top`, `padding-bottom`) até aparecem visualmente, mas não empurram os outros elementos ao redor (eles se sobrepõem, causando bugs visuais).
+* **Exemplos Clássicos:** `<a>` (links), `<span>`, `<strong>`, `<em>`, `<label>`.
+
+### 🧱 O Elemento de Bloco (Block)
+
+É o oposto do inline. Ele age como um tijolo ou uma caixa grande na sua página.
+
+* **Comportamento:** Ele sempre **força uma quebra de linha** (começa em uma linha nova) e empurra o próximo elemento para baixo.
+* **Largura e Altura:** Por padrão, ele tenta ocupar **100% da largura** do pai dele (esticando de ponta a ponta na tela), mas você pode controlar livremente o `width` e o `height` dele no CSS.
+* **Exemplos Clássicos:** `<div>`, `<article>`, `<section>`, `<header>`, `<h1>` a `<h6>`, `<p>`.
+
+---
+
+### 🌟 O Híbrido: `display: inline-block`
+
+É aqui que entra aquela solução mágica que usamos nos links!
+O `inline-block` junta o melhor dos dois mundos: ele continua fluindo na mesma linha (como um texto comum), mas "finge" ser um bloco internamente. Isso significa que o navegador passa a respeitar o `width`, o `height`, as margens e as transformações (como o `transform: scale()`).
+
+## 8. Estudo de Caso: Controlando a Direção do Efeito Hover (`transform-origin`)
+
+**O Problema:** Ao passar o mouse nos emails (que estão dentro de um Grid de 3 colunas separados por um `|`), eles aumentam de tamanho, mas dão a impressão de estarem "andando para o lado" ou invadindo o espaço da barra divisória. Já o número de telefone de baixo cresce perfeitamente no lugar. Por que?
+
+**A Explicação:**
+Por padrão, quando usamos o `transform: scale()`, o navegador aumenta o elemento a partir do **centro exato dele (50% 50%)**.
+Imagine encher um balão segurando-o pelo meio: ele cresce para todos os lados.
+
+* **O Telefone:** Está centralizado. Crescer a partir do meio funciona perfeitamente.
+* **Os Emails:** O email da esquerda está alinhado à direita (`text-align: right`) encostadinho na barra `|`. Quando ele cresce a partir do centro, a ponta direita dele avança por cima da barra, dando a ilusão visual de que o texto "andou". O mesmo acontece com o email da direita.
+
+### 🛠️ A Solução: Mudar a Origem da Transformação
+
+Nós precisamos dizer ao CSS: *"Ei, quando for aumentar este link, segure a ponta que está perto da barra parada e deixe o resto crescer para o outro lado!"*
+
+Fazemos isso com a propriedade `transform-origin`.
+
+**O Código Corrigido:**
+Você só precisa adicionar uma linha em cada regra de alinhamento que você já criou.
+
+```css
+.emailFooterContainer a:first-of-type {
+    text-align: right;
+    /* Trava o lado direito (perto da barra). O link vai crescer para a esquerda. */
+    transform-origin: right center; 
+}
+
+.emailFooterContainer a:last-of-type {
+    text-align: left;
+    /* Trava o lado esquerdo (perto da barra). O link vai crescer para a direita. */
+    transform-origin: left center; 
+}
+
+/* O resto do seu código continua iqualzinho! */
+.emailFooterItem>a {
+    color: var(--textoContraste);
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+.emailFooterItem>a:hover {
+    transform: scale(1.05);
+    color: #cacaca;
+}
