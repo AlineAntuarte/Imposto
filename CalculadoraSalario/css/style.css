@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Faz o padding não 'estourar' a largura */
+}
+
+:root {
+    --fundoPrincipal: white;
+    --fundoMenor: rgb(28, 50, 80);
+    --card: rgb(39, 42, 59);
+    --textoEspecial: rgb(28, 50, 80);
+    --textoGeral: #4F4F4F;
+    --textoContraste: rgb(248, 248, 248);
+
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; Faz que a navegação de links internos seja suave. */
+    width: 100%;
+    /* width: 100%; faz com que um elemento HTML ocupe toda a largura disponível do seu
+    contêiner pai (o elemento que o envolve).  */
+    overflow-x: hidden;
+    /* A propriedade CSS overflow-x define como o navegador deve lidar com o conteúdo
+    que ultrapassa os limites horizontais (esquerda/direita) de um elemento. */
+    /* overflow-x: hidden; no CSS oculta qualquer conteúdo de um elemento
+    que ultrapasse o limite horizontal (largura) da sua caixa, impedindo o surgimento da barra de rolagem lateral. */
+    min-height: 100vh;
+    /* Em CSS, a unidade vh significa Viewport Height (Altura da Visualização). 
+    1vh equivale a 1% da altura da janela do navegador (viewport).
+    Portanto, 100vh significa 100% da altura da janela.  */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+section,
+footer {
+    padding: 10px;
+    width: 100%;
+    display: flow-root;
+    /* Se um elemento qualquer contém elementos-filho, o flow-root faz com que o pai envolva completamente esses elementos, ajustando sua altura automaticamente. */
+}
+
+header {
+    background-color: var(--fundoMenor);
+    color: var(--textoContraste);
+}
+
+h1 {
+    text-align: center;
+    color: var(--textoEspecial);
+    margin-top: 15px;
+    font-size: 35px;
+}
+
+section {
+    min-height: 300px;
+}
+
+section>h2 {
+    color: var(--textoEspecial);
+    text-align: center;
+    font-size: 30px;
+}
+
+footer {
+    background-color: var(--fundoMenor);
+    color: var(--textoContraste);
+}
+
+.emailFooterItem {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.emailFooterContainer {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    /* Cria 3 colunas: as das pontas dividem o espaço igualmente,
+    a do meio se adapta ao tamanho da barra */
+    align-items: center;
+    /* Alinha tudo verticalmente no meio */
+    gap: 0 5px;
+}
+
+.emailFooterContainer a:first-of-type{
+    text-align: right;
+}
+
+.emailFooterContainer a:last-of-type{
+    text-align: left;
+}
