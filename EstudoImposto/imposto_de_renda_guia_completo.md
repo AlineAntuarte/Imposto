@@ -738,4 +738,3 @@ Os valores de IR são normalmente arredondados para **2 casas decimais**. Em pro
 
 > 📝 **Este guia cobre o IRPF para assalariados e situações comuns. Casos especiais (autônomos com CNPJ, investimentos, aluguéis, heranças, ganho de capital) possuem regras adicionais não abordadas aqui.**
 > *Última atualização: Tabelas 2024 — Ano-Calendário 2023/2024*
-//aaaaa
