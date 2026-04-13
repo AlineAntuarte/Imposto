@@ -53,6 +53,19 @@ header {
     color: var(--textoContraste);
 }
 
+header>a {
+    text-decoration: none;
+    color: var(--textoContraste);
+    margin: 0 8px;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+header>a:hover {
+    transform: scale(1.05);
+    color: var(--Ouro)
+}
+
 h1 {
     text-align: center;
     color: var(--textoEspecial);
