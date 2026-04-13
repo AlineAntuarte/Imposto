@@ -66,10 +66,15 @@ header>a:hover {
     color: var(--Ouro)
 }
 
+.titulo {
+    margin-top: 15px;
+    margin-bottom: 25px;
+    min-height: auto;
+}
+
 h1 {
     text-align: center;
     color: var(--textoEspecial);
-    margin-top: 15px;
     font-size: 35px;
 }
 
