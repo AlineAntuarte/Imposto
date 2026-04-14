@@ -9,6 +9,9 @@
     --fundoPrincipal: white;
     --fundoMenor: rgb(28, 50, 80);
     --fundoSubMenor: rgb(43, 66, 99);
+    --fundoSubMenor25: rgba(20, 84, 173, 0.25);
+    --fundoSubMenor50: rgba(20, 84, 173, 0.50);
+    --fundoSubMenor75: rgba(20, 84, 173, 0.75);
     --card: rgb(39, 42, 59);
     --textoEspecial: rgb(28, 50, 80);
     --textoGeral: #000000;
@@ -38,8 +41,7 @@ body {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+    
 }
 
 header,
@@ -128,6 +130,33 @@ dd {
     font-size: 16px;
     padding: 12px;
 }
+
+.Introducao {
+    min-height: 100vh;
+    margin-left: 200px;
+    margin-right: 200px;
+    display: grid;
+    box-shadow: 2px 2px 5px #000000;
+    background-color: var(--fundoSubMenor50);
+    padding: 20px;
+}
+
+.Introducao-item {
+    text-align: justify;
+}
+
+.Introducao h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+.Introducao h3 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
 
 footer {
     background-color: var(--fundoMenor);
