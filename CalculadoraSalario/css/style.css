@@ -8,11 +8,14 @@
 :root {
     --fundoPrincipal: white;
     --fundoMenor: rgb(28, 50, 80);
+    --fundoSubMenor: rgb(43, 66, 99);
     --card: rgb(39, 42, 59);
     --textoEspecial: rgb(28, 50, 80);
-    --textoGeral: #4F4F4F;
+    --textoGeral: #000000;
+    --textoSubGeral: #4F4F4F;
     --textoContraste: rgb(248, 248, 248);
     --Ouro: #f7bb17;
+    --OuroEscuro: rgb(129, 95, 9);
 
 }
 
@@ -23,7 +26,7 @@ body {
     width: 100%;
     /* width: 100%; faz com que um elemento HTML ocupe toda a largura disponível do seu
     contêiner pai (o elemento que o envolve).  */
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     /* A propriedade CSS overflow-x define como o navegador deve lidar com o conteúdo
     que ultrapassa os limites horizontais (esquerda/direita) de um elemento. */
     /* overflow-x: hidden; no CSS oculta qualquer conteúdo de um elemento
@@ -51,6 +54,11 @@ footer {
 header {
     background-color: var(--fundoMenor);
     color: var(--textoContraste);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
 }
 
 header>a {
@@ -78,10 +86,6 @@ h1 {
     font-size: 35px;
 }
 
-li {
-    margin-left: 18px;
-}
-
 section {
     min-height: 300px;
 }
@@ -90,6 +94,36 @@ section>h2 {
     color: var(--textoEspecial);
     text-align: center;
     font-size: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+li {
+    margin-left: 18px;
+}
+
+span {
+    color: var(--OuroEscuro);
+}
+
+.Glossario>h4 {
+    min-height: auto;
+    max-width: 100%;
+    background-color: var(--fundoMenor);
+    color: var(--textoContraste);
+    font-size: 20px;
+}
+
+dt {
+    background-color: var(--fundoSubMenor);
+    color: var(--textoContraste);
+    font-size: 18px;
+}
+
+dd {
+    background-color: var(--fundoPrincipal);
+    color: var(--textoGeral);
+    font-size: 16px;
 }
 
 footer {
