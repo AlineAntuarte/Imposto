@@ -2,6 +2,8 @@
 
 ## 1. Cores e Legibilidade
 
+*Exemplo - <https://www.pravah.com/?ref=land-book.com>*
+
 **Cenário Base:** Fundo escuro e quente (`#3c292b` - marrom profundo) com caixas claras (`#faebd7` - antiquewhite). O objetivo é criar alto contraste para garantir a legibilidade.
 
 ### Melhores Opções de Cor de Fonte
