@@ -71,6 +71,15 @@ header>a:hover {
     color: var(--Ouro)
 }
 
+.linha-divisoria {
+    width: 100%;
+    /* Ocupa a tela toda ou o espaço da grid */
+    border-bottom: 2px solid var(--fundoMenor);
+    /* A cor da sua paleta */
+    margin: 20px 0;
+    /* Dá um respiro de 20px em cima e embaixo da linha */
+}
+
 .titulo {
     margin-top: 15px;
     margin-bottom: 25px;
@@ -125,14 +134,56 @@ dd {
     padding: 40px 20px;
 }
 
+.Introducao-esquerda {}
+
 .card-Introducao {
-    box-shadow: 1px 2px 5px #000000;
+    display: none;
+    background-color: #84a6c5;
     margin: 20px;
     border-radius: 10px;
     padding: 20px;
 }
 
-.imagem-Introducao {
+.card-Introducao.ativo {
+    display: block;
+    animation: surgir-da-direita 0.5s ease;
+}
+
+/* @keyframes: É o comando que avisa o navegador: "Atenção, estou criando uma animação".
+    surgir-da-direita: É o nome que substitui de "fade-in" para essa animação.*/
+@keyframes surgir-da-direita {
+
+    /* from: Define o ponto de partida (como o elemento nasce na tela).
+    opacity: 0;: Ele começa totalmente invisível (transparente).
+    transform: translateX(10px);: Ele começa deslocando 10 pixels para a direita no eixo X (horizontal). */
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+
+    /* to: Define o ponto de chegada (como o elemento deve ficar no final da animação).
+    opacity: 1;: Ele termina 100% visível e sólido.
+    transform: translateX(0);: Ele desliza de volta para a posição original dele (0),
+    ou seja, o lugar onde ele realmente deveria estar na tela. */
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.carrossel-controles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.carrossel-controles>span {
+    color: var(--textoEspecial);
+    font-size: 20px;
+}
+
+.Introducao-imagem {
     background-image: url(../../Imagens/Estilo/bannerCalculadora.png);
     background-position: center;
     background-size: cover;
@@ -146,13 +197,13 @@ dd {
 }
 
 .Introducao h2 {
-    grid-column: 1 / -1;
     text-align: center;
     margin-bottom: 50px;
+    color: var(--textoEspecial);
+    font-size: 30px;
 }
 
 .Introducao h3 {
-    grid-column: 1 / -1;
     text-align: center;
     margin-bottom: 10px;
 }
