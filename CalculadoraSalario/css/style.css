@@ -19,7 +19,6 @@
     --textoContraste: rgb(248, 248, 248);
     --Ouro: #f7bb17;
     --OuroEscuro: rgb(129, 95, 9);
-
 }
 
 html,
@@ -160,7 +159,10 @@ dd {
 
 .Glossario {
     display: grid;
+    place-items: center;
 }
+
+.Glossario-subConteiner {}
 
 .Glossario-item {
     width: 900px;
@@ -188,7 +190,48 @@ dd {
     padding: 8px;
 }
 
+.Sobre {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
 
+.Sobre-item {
+    text-align: justify;
+}
+
+.card-Sobre {
+    box-shadow: 1px 2px 5px #000000;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.imagem-Sobre>img {
+    width: 750px;
+    height: 750px;
+
+    object-fit: cover;
+
+    background-position: center;
+    border-radius: 8px;
+
+    box-shadow: 1px 2px 3px #000000;
+
+}
+
+.Sobre h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.Sobre h3 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 10px;
+}
 
 footer {
     background-color: var(--fundoMenor);
