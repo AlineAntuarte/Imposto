@@ -203,7 +203,7 @@ span {
     margin-bottom: 50px;
 }
 
-.Glossario-item>h4 {
+.Glossario-item>h3 {
     min-height: auto;
     width: 1200px;
     background-color: var(--fundoMenor);
