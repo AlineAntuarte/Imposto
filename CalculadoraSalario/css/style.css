@@ -111,9 +111,19 @@ h1 {
 }
 
 section {
+    /* 1. Ocupa todo o espaço que der... */
+    width: 100%;
+    /* 2. ...mas bate no teto de 1200px e para de crescer. */
+    max-width: 1200px;
+    /* 3. A MÁGICA DO ALINHAMENTO: 
+       Isso diz "coloque margem zero em cima/embaixo, e divida o espaço 
+       que sobrar nas laterais igualmente". É isso que centraliza o seu bloco! */
+    margin: 0 auto;
+    /* Um respiro interno para o texto não colar na borda da tela nos celulares */
+    padding: 40px 20px;
+
     min-height: 300px;
     display: flow-root;
-
 }
 
 section>h2 {
