@@ -40,7 +40,6 @@ body {
 }
 
 header,
-section,
 footer {
     padding: 10px;
     width: 100%;
@@ -51,17 +50,19 @@ footer {
 header {
     background-color: var(--fundoMenor);
     color: var(--textoContraste);
-
+    text-align: center;
+    font-size: 22px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     position: sticky;
     top: 0;
-
     z-index: 1000;
+    box-shadow: 0 4px 7px -1px rgba(0, 0, 0, 0.7);
 }
 
 header>a {
     text-decoration: none;
     color: var(--textoContraste);
-    margin: 0 8px;
+    margin: 0 15px;
     display: inline-block;
     transition: 0.3s ease;
 }
@@ -71,8 +72,22 @@ header>a:hover {
     color: var(--Ouro)
 }
 
+body {
+    display: grid;
+    place-items: center;
+}
+
 .linha-divisoria {
-    width: 100%;
+    width: 1200px;
+    /* Ocupa a tela toda ou o espaço da grid */
+    border-bottom: 2px solid var(--fundoMenor);
+    /* A cor da sua paleta */
+    margin: 20px 0;
+    /* Dá um respiro de 20px em cima e embaixo da linha */
+}
+
+.linha-divisoriaCurta {
+    width: 600px;
     /* Ocupa a tela toda ou o espaço da grid */
     border-bottom: 2px solid var(--fundoMenor);
     /* A cor da sua paleta */
@@ -90,16 +105,22 @@ h1 {
     text-align: center;
     color: var(--textoEspecial);
     font-size: 35px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 section {
     min-height: 300px;
+    display: flow-root;
+
 }
 
 section>h2 {
     color: var(--textoEspecial);
     text-align: center;
     font-size: 30px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -112,103 +133,50 @@ span {
     color: var(--OuroEscuro);
 }
 
-dt {
-    background-color: var(--fundoSubMenor);
-    color: var(--textoContraste);
-    font-size: 18px;
-    padding: 10px;
-    text-align: left;
-}
-
-dd {
-    background-color: var(--fundoPrincipal);
-    color: var(--textoGeral);
-    font-size: 16px;
-    padding: 12px;
-}
-
 .Introducao {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     min-height: 100vh;
-    padding: 40px 20px;
+    width: 1200px;
 }
 
 .card-Introducao {
-    display: none;
-    background-color: #84a6c5;
+    background-color: rgba(132, 166, 197, 0.05);
     margin: 20px;
     border-radius: 10px;
     padding: 20px;
 }
 
-.card-Introducao.ativo {
-    display: block;
-    animation: surgir-da-direita 0.5s ease;
-}
-
-/* @keyframes: É o comando que avisa o navegador: "Atenção, estou criando uma animação".
-    surgir-da-direita: É o nome que substitui de "fade-in" para essa animação.*/
-@keyframes surgir-da-direita {
-
-    /* from: Define o ponto de partida (como o elemento nasce na tela).
-    opacity: 0;: Ele começa totalmente invisível (transparente).
-    transform: translateX(10px);: Ele começa deslocando 10 pixels para a direita no eixo X (horizontal). */
-    from {
-        opacity: 0;
-        transform: translateX(10px);
-    }
-
-    /* to: Define o ponto de chegada (como o elemento deve ficar no final da animação).
-    opacity: 1;: Ele termina 100% visível e sólido.
-    transform: translateX(0);: Ele desliza de volta para a posição original dele (0),
-    ou seja, o lugar onde ele realmente deveria estar na tela. */
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.carrossel-controles {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px;
-}
-
-.carrossel-controles>span {
-    color: var(--textoEspecial);
-    font-size: 20px;
-}
-
-.Introducao-imagem {
-    background-image: url(../../Imagens/Estilo/bannerCalculadora.png);
-    background-position: center;
-    background-size: cover;
-    border-radius: 8px;
-    box-shadow: 1px 2px 5px #000000;
-    min-height: 400px;
-}
-
 .Introducao-item {
     text-align: justify;
+    font-size: 17px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .Introducao h2 {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     color: var(--textoEspecial);
-    font-size: 30px;
+    font-size: 32px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .Introducao h3 {
+    font-size: 30px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
     margin-bottom: 10px;
 }
 
+.Introducao h4 {
+    font-size: 28px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    margin: 10px 0;
+}
+
 .Glossario {
     display: grid;
-    place-items: center;
+    width: 1200px;
 }
 
 .Glossario-item {
@@ -220,6 +188,8 @@ dd {
     grid-column: 1 / -1;
     text-align: center;
     margin-bottom: 50px;
+    font-size: 17px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .Glossario>h2 {
@@ -230,11 +200,31 @@ dd {
 
 .Glossario-item>h4 {
     min-height: auto;
-    max-width: 100%;
+    width: 1200px;
     background-color: var(--fundoMenor);
     color: var(--textoContraste);
     font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 8px;
+}
+
+dt {
+    width: 1200px;
+    background-color: var(--fundoSubMenor);
+    color: var(--textoContraste);
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 10px;
+    text-align: left;
+}
+
+dd {
+    width: 1200px;
+    background-color: var(--fundoPrincipal);
+    color: var(--textoGeral);
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 12px;
 }
 
 .Sobre {
@@ -246,26 +236,26 @@ dd {
 
 .Sobre-item {
     text-align: justify;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .card-Sobre {
-    box-shadow: 1px 2px 5px #000000;
     margin: 20px;
-    border-radius: 10px;
     padding: 20px;
+    width: 600px;
+}
+
+.imagem-Sobre {
+    display: grid;
+    place-items: center;
 }
 
 .imagem-Sobre>img {
-    width: 750px;
-    height: 750px;
-
+    width: 600px;
+    height: 502px;
     object-fit: cover;
-
     background-position: center;
     border-radius: 8px;
-
-    box-shadow: 1px 2px 3px #000000;
-
 }
 
 .Sobre h2 {
@@ -283,7 +273,20 @@ dd {
 footer {
     background-color: var(--fundoMenor);
     color: var(--textoContraste);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+.paddingFooter {
+    padding: 5px;
+    display: grid;
+    place-items: center;
+}
+
+.tel {
+    padding-bottom: 8px;
+}
+
+
 
 .emailFooterItem {
     vertical-align: middle;
@@ -297,7 +300,7 @@ footer {
     a do meio se adapta ao tamanho da barra */
     align-items: center;
     /* Alinha tudo verticalmente no meio */
-    gap: 0 5px;
+    gap: 0px 5px;
 }
 
 .emailFooterContainer a:first-of-type {
