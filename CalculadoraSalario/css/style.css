@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Faz o padding não 'estourar' a largura */
 }
 
 :root {
@@ -24,26 +23,14 @@
 html,
 body {
     scroll-behavior: smooth;
-    /* scroll-behavior: smooth; Faz que a navegação de links internos seja suave. */
     width: 100%;
-    /* width: 100%; faz com que um elemento HTML ocupe toda a largura disponível do seu
-    contêiner pai (o elemento que o envolve).  */
-    /* overflow-x: hidden; */
-    /* A propriedade CSS overflow-x define como o navegador deve lidar com o conteúdo
-    que ultrapassa os limites horizontais (esquerda/direita) de um elemento. */
-    /* overflow-x: hidden; no CSS oculta qualquer conteúdo de um elemento
-    que ultrapasse o limite horizontal (largura) da sua caixa, impedindo o surgimento da barra de rolagem lateral. */
     min-height: 100vh;
-    /* Em CSS, a unidade vh significa Viewport Height (Altura da Visualização). 
-    1vh equivale a 1% da altura da janela do navegador (viewport).
-    Portanto, 100vh significa 100% da altura da janela.  */
 }
 
 header,
 footer {
     width: 100%;
     display: flow-root;
-    /* Se um elemento qualquer contém elementos-filho, o flow-root faz com que o pai envolva completamente esses elementos, ajustando sua altura automaticamente. */
 }
 
 .Cabecalho {
@@ -83,22 +70,20 @@ body {
 }
 
 .linha-divisoria {
-    /* Ocupa a tela toda ou o espaço da grid */
     border-bottom: 2px solid var(--fundoMenor);
-    /* A cor da sua paleta */
     margin: 20px 0;
-    /* Dá um respiro de 20px em cima e embaixo da linha */
-
     grid-column: 1 / -1;
 }
 
-.linha-divisoriaCurta {
-    width: 600px;
-    /* Ocupa a tela toda ou o espaço da grid */
-    border-bottom: 2px solid var(--fundoMenor);
-    /* A cor da sua paleta */
-    margin: 20px 0;
-    /* Dá um respiro de 20px em cima e embaixo da linha */
+.divisor-secao {
+    background-color: var(--fundoSubMenor);
+    color: var(--textoContraste);
+    text-align: center;
+    margin: 5px 0;
+    padding: 5px 20px;
+    font-size: 12px;
+    font-style: italic;
+    width: 100%;
 }
 
 .titulo {
@@ -115,18 +100,11 @@ h1 {
 }
 
 section {
-    /* 1. Ocupa todo o espaço que der... */
     width: 100%;
-    /* 2. ...mas bate no teto de 1200px e para de crescer. */
     max-width: 1200px;
-    /* 3. A MÁGICA DO ALINHAMENTO: 
-       Isso diz "coloque margem zero em cima/embaixo, e divida o espaço 
-       que sobrar nas laterais igualmente". É isso que centraliza o seu bloco! */
     margin: 0 auto;
-    /* Um respiro interno para o texto não colar na borda da tela nos celulares */
     padding-top: 40px;
     padding-bottom: 40px;
-
     min-height: 300px;
     display: flow-root;
 }
@@ -257,17 +235,14 @@ dd {
     min-height: 100vh;
     display: grid;
     place-items: center;
-    /* O gradiente escurece a imagem. A imagem fica fixada no fundo para o parallax! */
     background-image: linear-gradient(rgba(28, 50, 80, 0.9), rgba(28, 50, 80, 0.9)), url('../../Imagens/Estilo/bannerCalculadora.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    /* <-- A palavra mágica para o Parallax */
 }
 
 .Calculadora h2 {
     color: white;
-    /* Título precisa ficar branco para dar contraste */
     font-size: 40px;
 }
 
@@ -277,11 +252,8 @@ dd {
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-height: 100vh;
-    /* AS DUAS MÁGICAS QUE FALTAVAM: */
     align-content: center;
-    /* Junta as 3 linhas (divisória, H2 e cards) bem no meio do 100vh */
     align-items: center;
-    /* Centraliza perfeitamente o texto da esquerda com a foto da direita */
 
     gap: 0px 50px;
 }
@@ -318,12 +290,10 @@ dd {
     margin-bottom: 10px;
 }
 
-/* --- SEÇÃO DE CONTATO --- */
 
 .Contato {
     display: grid;
     place-items: center;
-    /* Centraliza o formulário no meio da tela */
 }
 
 .card-Contato {
@@ -332,20 +302,15 @@ dd {
     border-radius: 10px;
     width: 100%;
     max-width: 800px;
-    /* Limita a largura para o formulário não ficar esticado e feio */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* 🎯 O REQUISITO DO PROFESSOR: Formulário organizado em Grid! */
 .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* Duas colunas iguais para Nome e Sobrenome */
     gap: 20px;
-    /* Espaço entre os campos */
 }
 
-/* Força os campos grandes a ignorarem as 2 colunas e ocuparem a linha toda */
 .campo-largo {
     grid-column: 1 / -1;
 }
@@ -361,7 +326,6 @@ dd {
     font-size: 16px;
 }
 
-/* Estilo das caixinhas de digitar */
 .form-grupo input,
 .form-grupo select,
 .form-grupo textarea {
@@ -369,7 +333,6 @@ dd {
     border-radius: 5px;
     border: none;
     font-family: inherit;
-    /* Herda a sua fonte bonita do sistema */
     font-size: 16px;
     background-color: var(--fundoPrincipal);
     color: var(--textoGeral);
@@ -377,10 +340,8 @@ dd {
 
 .form-grupo textarea {
     resize: vertical;
-    /* Permite que o usuário estique a caixa só para baixo */
 }
 
-/* O Botão de Enviar */
 .botao-enviar {
     background-color: var(--OuroEscuro);
     color: var(--textoContraste);
@@ -423,10 +384,7 @@ footer {
 .emailFooterContainer {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    /* Cria 3 colunas: as das pontas dividem o espaço igualmente,
-    a do meio se adapta ao tamanho da barra */
     align-items: center;
-    /* Alinha tudo verticalmente no meio */
     gap: 0px 5px;
 }
 
@@ -458,10 +416,6 @@ footer {
     .Sobre {
         grid-template-columns: 1fr;
         gap: 20px;
-    }
-
-    .linha-divisoriaCurta {
-        width: 100%;
     }
 
     .Calculadora {
