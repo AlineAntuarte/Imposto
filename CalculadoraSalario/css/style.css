@@ -86,8 +86,41 @@ body {
     width: 100%;
 }
 
+.divisor-secao-Sobre {
+    grid-column: 1 / -1;
+}
+
 .card-Introducao:first-of-type {
     background-color: var(--fundoSubMenor25);
+}
+
+.link-proximo {
+    display: block;
+    text-align: center;
+    grid-column: 1 / -1;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: var(--fundoMenor);
+    color: var(--Ouro);
+    text-decoration: none;
+    border-radius: 50px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.botao-topo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--Ouro);
+    color: var(--textoEspecial);
+    padding: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
 }
 
 .titulo {
