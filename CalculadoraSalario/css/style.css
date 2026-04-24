@@ -247,6 +247,27 @@ dd {
     padding: 12px;
 }
 
+/*------------------------------------------*/
+.Calculadora {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    /* O gradiente escurece a imagem. A imagem fica fixada no fundo para o parallax! */
+    background-image: linear-gradient(rgba(28, 50, 80, 0.9), rgba(28, 50, 80, 0.9)), url('../../Imagens/Estilo/bannerCalculadora.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* <-- A palavra mágica para o Parallax */
+}
+
+.Calculadora h2 {
+    color: white;
+    /* Título precisa ficar branco para dar contraste */
+    font-size: 40px;
+}
+
+/*------------------------------------------*/
+
 .Sobre {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -344,6 +365,42 @@ footer {
 .emailFooterItem>a:hover {
     transform: scale(1.05);
     color: var(--Ouro)
+}
+
+/* --- RESPONSIVIDADE (MEDIA QUERIES) --- */
+
+@media (max-width: 720px) {
+    .Sobre {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .linha-divisoriaCurta {
+        width: 100%;
+    }
+
+    .Calculadora {
+        background-image: linear-gradient(rgba(28, 50, 80, 0.7), rgba(28, 50, 80, 0.7)), url('../Imagens/Exemplo/Exemplo02.webp');
+    }
+}
+
+@media (max-width: 540px) {
+    header {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    section {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .Calculadora {
+        background-image: linear-gradient(rgba(28, 50, 80, 0.7), rgba(28, 50, 80, 0.7)), url('../Imagens/Exemplo/Exemplo.webp');
+    }
 }
 
 /* --- SELOS W3C --- */
