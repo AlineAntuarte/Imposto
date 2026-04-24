@@ -479,22 +479,23 @@ footer {
 }
 
 @media (max-width: 540px) {
-    .Calculadora {
-        background-image: linear-gradient(rgba(28, 50, 80, 0.7), rgba(28, 50, 80, 0.7)), url('../../Imagens/Estilo/bannerCalculadora03.jpg');
-        background-attachment: scroll;
-    }
-
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-
-    h1 {
-        font-size: 28px;
-    }
-
     header {
         flex-direction: column;
-        gap: 15px;
+        padding: 15px 10px;
+        height: auto;
+    }
+
+    .Cabecalho {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    header a {
+        margin: 0 5px;
+        font-size: 14px;
     }
 }
 
