@@ -313,6 +313,88 @@ dd {
     margin-bottom: 10px;
 }
 
+/* --- SEÇÃO DE CONTATO --- */
+
+.Contato {
+    display: grid;
+    place-items: center;
+    /* Centraliza o formulário no meio da tela */
+}
+
+.card-Contato {
+    background-color: var(--fundoMenor);
+    padding: 40px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    /* Limita a largura para o formulário não ficar esticado e feio */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 🎯 O REQUISITO DO PROFESSOR: Formulário organizado em Grid! */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Duas colunas iguais para Nome e Sobrenome */
+    gap: 20px;
+    /* Espaço entre os campos */
+}
+
+/* Força os campos grandes a ignorarem as 2 colunas e ocuparem a linha toda */
+.campo-largo {
+    grid-column: 1 / -1;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-grupo label {
+    color: var(--textoContraste);
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+/* Estilo das caixinhas de digitar */
+.form-grupo input,
+.form-grupo select,
+.form-grupo textarea {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    font-family: inherit;
+    /* Herda a sua fonte bonita do sistema */
+    font-size: 16px;
+    background-color: var(--fundoPrincipal);
+    color: var(--textoGeral);
+}
+
+.form-grupo textarea {
+    resize: vertical;
+    /* Permite que o usuário estique a caixa só para baixo */
+}
+
+/* O Botão de Enviar */
+.botao-enviar {
+    background-color: var(--OuroEscuro);
+    color: var(--textoContraste);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 10px;
+}
+
+.botao-enviar:hover {
+    background-color: var(--Ouro);
+    color: var(--textoEspecial);
+    transform: scale(1.02);
+}
+
 footer {
     background-color: var(--fundoMenor);
     color: var(--textoContraste);
@@ -327,8 +409,6 @@ footer {
 .tel {
     padding-bottom: 8px;
 }
-
-
 
 .emailFooterItem {
     vertical-align: middle;
@@ -400,6 +480,10 @@ footer {
 
     .Calculadora {
         background-image: linear-gradient(rgba(28, 50, 80, 0.7), rgba(28, 50, 80, 0.7)), url('../Imagens/Exemplo/Exemplo.webp');
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
     }
 }
 
