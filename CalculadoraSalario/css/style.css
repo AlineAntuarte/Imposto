@@ -113,14 +113,27 @@ body {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background-color: var(--Ouro);
-    color: var(--textoEspecial);
+    background-color: var(--fundoMenor);
     padding: 15px;
-    border-radius: 50%;
-    text-decoration: none;
-    font-weight: bold;
+    border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     z-index: 999;
+    transition: 0.3s ease;
+}
+
+.botao-topo a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--textoContraste) !important;
+}
+
+.botao-topo:hover {
+    transform: scale(1.05);
+    background-color: var(--fundoSubMenor);
+}
+
+.botao-topo:hover a {
+    color: var(--Ouro) !important;
 }
 
 .titulo {
