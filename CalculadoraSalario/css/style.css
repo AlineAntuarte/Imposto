@@ -267,7 +267,6 @@ dd {
     padding: 12px;
 }
 
-/*------------------------------------------*/
 .Calculadora {
     min-height: 100vh;
     display: grid;
@@ -282,8 +281,6 @@ dd {
     color: white;
     font-size: 40px;
 }
-
-/*------------------------------------------*/
 
 .Sobre {
     display: grid;
@@ -449,37 +446,44 @@ footer {
 
 /* --- RESPONSIVIDADE (MEDIA QUERIES) --- */
 
+.Calculadora {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-image: linear-gradient(rgba(28, 50, 80, 0.7), rgba(28, 50, 80, 0.7)), url('../../Imagens/Estilo/bannerCalculadora01.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
 @media (max-width: 720px) {
-    .Sobre {
-        grid-template-columns: 1fr;
-        gap: 20px;
+    .Calculadora {
+        background-image: linear-gradient(rgba(28, 50, 80, 0.7), rgba(28, 50, 80, 0.7)), url('../../Imagens/Estilo/bannerCalculadora02.jpg');
     }
 
-    .Calculadora {
-        background-image: linear-gradient(rgba(28, 50, 80, 0.7), rgba(28, 50, 80, 0.7)), url('../Imagens/Exemplo/Exemplo02.webp');
+    .Sobre {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 }
 
 @media (max-width: 540px) {
-    header {
-        font-size: 16px;
-    }
-
-    h1 {
-        font-size: 25px;
-    }
-
-    section {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-
     .Calculadora {
-        background-image: linear-gradient(rgba(28, 50, 80, 0.7), rgba(28, 50, 80, 0.7)), url('../Imagens/Exemplo/Exemplo.webp');
+        background-image: linear-gradient(rgba(28, 50, 80, 0.7), rgba(28, 50, 80, 0.7)), url('../../Imagens/Estilo/bannerCalculadora03.jpg');
+        background-attachment: scroll;
     }
 
     .form-grid {
         grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 15px;
     }
 }
 
