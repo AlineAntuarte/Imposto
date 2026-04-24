@@ -202,12 +202,34 @@ span {
     margin-bottom: 50px;
 }
 
-.Glossario-item>h3 {
-    min-height: auto;
+details {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+summary {
     background-color: var(--fundoMenor);
     color: var(--textoContraste);
+    padding: 12px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+summary:hover {
+    background-color: var(--fundoSubMenor);
+    color: var(--Ouro)
+}
+
+summary h3 {
+    display: inline-block;
     font-size: 20px;
-    padding: 8px;
+    margin: 0;
+    margin-left: 10px;
+}
+
+details dl {
+    margin-top: 10px;
 }
 
 dt {
