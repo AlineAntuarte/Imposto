@@ -86,6 +86,10 @@ body {
     width: 100%;
 }
 
+.card-Introducao:first-of-type {
+    background-color: var(--fundoSubMenor25);
+}
+
 .titulo {
     margin-top: 15px;
     margin-bottom: 25px;
