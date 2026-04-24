@@ -323,3 +323,22 @@ footer {
     transform: scale(1.05);
     color: var(--Ouro)
 }
+
+/* --- SELOS W3C --- */
+.selos-w3c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.selos-w3c a {
+    transition: transform 0.3s ease;
+}
+
+.selos-w3c a:hover {
+    transform: scale(1.1);
+}
