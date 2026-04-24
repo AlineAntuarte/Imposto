@@ -78,7 +78,6 @@ body {
 }
 
 .linha-divisoria {
-    width: 1200px;
     /* Ocupa a tela toda ou o espaço da grid */
     border-bottom: 2px solid var(--fundoMenor);
     /* A cor da sua paleta */
@@ -120,7 +119,8 @@ section {
        que sobrar nas laterais igualmente". É isso que centraliza o seu bloco! */
     margin: 0 auto;
     /* Um respiro interno para o texto não colar na borda da tela nos celulares */
-    padding: 40px 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 
     min-height: 300px;
     display: flow-root;
@@ -146,7 +146,6 @@ span {
 .Introducao {
     display: grid;
     min-height: 100vh;
-    width: 1200px;
 }
 
 .card-Introducao {
@@ -182,11 +181,11 @@ span {
 
 .Glossario {
     display: grid;
-    width: 1200px;
 }
 
 .Glossario-item {
-    width: 900px;
+    margin: 0px auto;
+    max-width: 900px;
     text-align: justify;
 }
 
@@ -205,7 +204,6 @@ span {
 
 .Glossario-item>h3 {
     min-height: auto;
-    width: 1200px;
     background-color: var(--fundoMenor);
     color: var(--textoContraste);
     font-size: 20px;
@@ -213,7 +211,6 @@ span {
 }
 
 dt {
-    width: 1200px;
     background-color: var(--fundoSubMenor);
     color: var(--textoContraste);
     font-size: 18px;
@@ -222,7 +219,6 @@ dt {
 }
 
 dd {
-    width: 1200px;
     background-color: var(--fundoPrincipal);
     color: var(--textoGeral);
     font-size: 16px;
@@ -233,7 +229,13 @@ dd {
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-height: 100vh;
-    padding: 40px 20px;
+    /* AS DUAS MÁGICAS QUE FALTAVAM: */
+    align-content: center;
+    /* Junta as 3 linhas (divisória, H2 e cards) bem no meio do 100vh */
+    align-items: center;
+    /* Centraliza perfeitamente o texto da esquerda com a foto da direita */
+
+    gap: 0px 50px;
 }
 
 .Sobre-item {
@@ -241,9 +243,7 @@ dd {
 }
 
 .card-Sobre {
-    margin: 20px;
-    padding: 20px;
-    width: 600px;
+    width: 100%;
 }
 
 .imagem-Sobre {
@@ -252,7 +252,7 @@ dd {
 }
 
 .imagem-Sobre>img {
-    width: 600px;
+    width: 100%;
     height: 455px;
     object-fit: cover;
     background-position: center;
@@ -261,8 +261,6 @@ dd {
 
 .Sobre h2 {
     grid-column: 1 / -1;
-    text-align: center;
-    align-items: center;
     margin-bottom: 50px;
 }
 
